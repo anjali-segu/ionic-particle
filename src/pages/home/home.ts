@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
+import { ListPage } from '../list/list'; 
 import { ParticleProvider } from '../../providers/particle/particle';
 
 @Component({
@@ -12,6 +13,10 @@ export class HomePage {
   private subscription: any = null;
   
   constructor(public navCtrl: NavController, public particle: ParticleProvider) {
+  }
+
+  goToNext() {
+    this.navCtrl.push(ListPage);
   }
 
   ionViewDidLoad() {

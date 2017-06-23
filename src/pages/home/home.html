@@ -3,48 +3,82 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Anjali's App</ion-title>
+    <ion-title>PoweredSleep</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding> 
+<!--Used to be ion content padding-->
+<ion-content padding class="bg">
+  
   <div *ngIf="!particle.token">
       Please login and select a device. <br />
       <button ion-button (click)="login()">Login</button>
   </div>
   <div *ngIf="particle.token && particle.device">
-      <h3>Particle.io Device App Boilerplate</h3>
+      <h2 class="title-div font-div">Reinvent Your Sleep Life</h2>
       <div>
-          <h5>Particle device status</h5>
-          <p>
-            You can display different device states by checking <code>particle.device</code>
+          <!--<h5></h5> Used to be h5 tag saying Particle Device status-->
+          <p class="intro-div font-div">
+            Oversleeping may seem ideal, but it can be just as damaging to our sleep cycle as not getting enough sleep  <!--<code>particle.device</code>-->
           </p>
-          <p *ngIf="!particle.device || !particle.device.connected">The device is offline</p>
+          <!--<p *ngIf="!particle.device || !particle.device.connected">The device is offline</p>-
           <p *ngIf="particle.device && particle.device.connected">You are currently viewing {{particle.device.name}}</p>
+          -->
       </div>
+      <div class="font-div">
+          
+           <h5 class="setup-div">Setup</h5>
+           
+              <table>
+                  <tr>
+                    <td style="width: 50%">1. Connect your shirt to the app</td>
+                    <td style="width: 50%">2. Put on your Powered Sleep Shirt</td>
+                  </tr>
+
+                  <tr>
+                    <td style="width: 50%">3. Click the button the center of your shirt</td>
+                    <td style="width: 50%">4. SLEEP MORE!</td>
+                  </tr>
+              </table>
+              
+
+           <!--
+           <div class= "btn-group" style= "width: 100%">
+              <button style="width: 50%">1. Connect your shirt to the app</button>
+              <button style="width: 50%">2. Put on on your PoweredSleep Shirt</button>
+              <<button style="width: 50%">3. Click the button on the center of your shirt</button>
+              <button style="width: 50%">4. SLEEP MORE!</button>
+              
+           </div>
+           -->
+           
+
+           <!--
+            <p class="list-div "> 1. Connect your shirt to the app</p>
+            <p class="list-div"> 2. Put on your PoweredSleep Shirt</p>
+            <p class="list-div"> 3. Click the button on the center of your shirt</p>
+            <p class="list-div"> 4. SLEEP MORE!</p>
+          -->
+          
+            
+            <!--You can subscribe to variables by calling <code>particle.pollVariable </code>. -->
+      </div>
+
+
       <div>
-          <h5>Device variables</h5>
-          <p>
-            You can subscribe to variables by calling <code>particle.pollVariable</code>.
-          </p>
-          <p>
-            The device variable "var1" automatically polls, and the current value is {{var1}}
-          </p>
+         <h5 class="font-div final-title">Customize Your Needs</h5>
+            <p class="final-div font-div">
+            Setup an alarm and find your "sweet spot" for sleep! Sleep is essential and only you can improve it! Click here to setup a schedule. <!--<code>particle.device</code>-->
+            </p>
+
+            <button ion-button (click)= "goToNext()">Set Up Schedule</button>
+        
       </div>
-      <div>
-          <h5>Custom components</h5>
-          <p>
-            You can also create custom components. It's also more efficient to update components by subscribing to events 
-            from your device, by calling <code>particle.subscribe</code>
-          </p>
-          <particle-progress [event]="'variableUpdate'" [min]="2" [max]="10"></particle-progress>
-      </div>
-      <div>
-        <h5>Calling functions</h5>
-        <p>
-            You can call device functions with <code>particle.callFunction</code>
-        </p>
-        <button ion-button (click)="particle.callFunction('fun1')">Call a function</button>
-      </div>
+
+
+      
   </div>
+
+
+  
 </ion-content>
