@@ -52,6 +52,7 @@ td {
 }
 
 .final-title {
+	margin: 5px 3px 4px 3px; 
 	padding: 2px 2px 2px 2px; 
 	border: 3px solid gray; 
 	border-radius: 8px; 
@@ -63,5 +64,10 @@ td {
 	border: 3px solid gray; 
 	border-radius: 8px; 
 	color: white; 
-	margin: 2px 2px 2px 2px; 
+	margin: 2px 2px 2px 2px;
+	text-align: center; 
+}
+
+button {
+
 }
